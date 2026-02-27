@@ -17,4 +17,8 @@ Here are some ideas to get you started:
 
 hi, меня зовут Саня 22 y.o, занимаюсь back-end разработкой golang/nodejs. Сейчас углубляю свои знания. 
 Мечтаю о Highload(возможно зря)
+
 [Мои карты знаний](/СОВЕРШЕННО%20СЕКРЕТНО/КАРТЫ)
+
+tg [@Aytuganovv2](https://t.me/Aytuganovv2)
+email aytuganovv2@gmail.com
