@@ -2,13 +2,27 @@ syncCond - Это condition variable координирующая горутин
 Сигнатура
 ```go
 type Cond struct {
+	noCopy noCopy
+
 	L Locker
+	notify notifyList
+	checker copyChecker
 }
+
+type copyChecker uintptr
 ```
-где Locker это обычно Mutex или RWMutex
+где 
+- Locker это обычно Mutex или RWMutex
+- notifyList это список ожидающих горутин
+- copyChecker это указатель на самого себя, чтобы можно было определить копирование
+
 Cond работает напрямую с runtime sheduler'ом
 при вызове Wait() горутина паркуется
+
 При вызове signal горутина снова продолжает свою работу
+
+при вызове broadcast все горутины становятся runnable, но не все сразу выполняются т.к. берется лок одной из горутины
+
 Пример использования
 ```go
 var (
