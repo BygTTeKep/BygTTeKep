@@ -21,6 +21,11 @@ hi, меня зовут Саня 22 y.o, занимаюсь back-end разра�
 [Мои карты знаний](/СОВЕРШЕННО%20СЕКРЕТНО/КАРТЫ)
 
 [BabelBridge](https://github.com/BygTTeKep/BabelBridge/) - Автоперевод сообщений в мессенджерах
+# Проект THE CREATOR
+[Тут я живу](https://ru.yougile.com/board/aukomsjconma)
 
+[Сайт](https://thecreatorstudio.ru/)
+
+# Связаться со мной
 tg [@Aytuganovv2](https://t.me/Aytuganovv2)
 email aytuganovv2@gmail.com
