@@ -21,6 +21,7 @@ hi, меня зовут Саня 23 y.o, занимаюсь back-end разра�
 [Мои карты знаний](/СОВЕРШЕННО%20СЕКРЕТНО/КАРТЫ)
 
 [YandexDirectSkills](https://github.com/BygTTeKep/yandexdirect-skills) - Скиллы для claude для эффективных продаж с помощью ЯД
+
 [TOCHKALIB](https://github.com/BygTTeKep/tochkalib) - Библиотека для NestJS для работы с api Точка банка
 # Проект THE CREATOR
 [Тут я живу](https://ru.yougile.com/board/aukomsjconma)
