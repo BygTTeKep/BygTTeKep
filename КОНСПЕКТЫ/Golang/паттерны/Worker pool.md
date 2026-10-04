@@ -42,3 +42,57 @@ func main() {
 	time.Sleep(5 * time.Second)
 }
 ```
+
+**Ключевые моменты:**
+- `jobCh` закрывает продюсер, `resCh` закрывает отдельная горутина после `wg.Wait()`.
+- Воркеры завершаются сами, когда `jobCh` закрыт и пуст (`range`).
+- Результаты приходят в **произвольном порядке**. Нужен порядок: передавайте индекс вместе с задачей и пишите в `results[i]`.
+- Размер пула подбирают под тип нагрузки: для CPU-bound около `GOMAXPROCS`, для I/O-bound больше.
+- Буфер у `jobCh` сглаживает всплески, но не заменяет решение проблемы обратного давления.
+**Короткая альтернатива:** `errgroup` с `SetLimit(n)` (см. прошлый ответ) даёт тот же эффект без ручных каналов, плюс ошибки и отмену.
+
+```go
+func workerPool(ctx context.Context, jobs []int, n int) []int {
+    jobCh := make(chan int)
+    resCh := make(chan int)
+
+    var wg sync.WaitGroup
+    for range n {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            for j := range jobCh {
+                select {
+                case resCh <- process(j):
+                case <-ctx.Done():
+                    return
+                }
+            }
+        }()
+    }
+
+    // продюсер
+    go func() {
+        defer close(jobCh)
+        for _, j := range jobs {
+            select {
+            case jobCh <- j:
+            case <-ctx.Done():
+                return
+            }
+        }
+    }()
+
+    // закрываем результаты, когда все воркеры закончили
+    go func() {
+        wg.Wait()
+        close(resCh)
+    }()
+
+    var out []int
+    for r := range resCh {
+        out = append(out, r)
+    }
+    return out
+}
+```
