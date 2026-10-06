@@ -1,6 +1,7 @@
 <div align="center">
 <img src="_resourses\images\268c549e905ca2faa05a889bce435ddc_720w.gif"/>
 </div>
+
 <h1 style="text-align: center;">Hi there 👋 I'm Alex</h1>
 
 <h3 align="center">Backend Developer NodeJS/GO</h3>
@@ -57,3 +58,11 @@ hi, меня зовут Саня 23 y.o, занимаюсь back-end разра�
 [![GitHub Streak](https://streak-stats.demolab.com?user=BygTTeKep&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
 
 </div>
+
+<h2 align="center"> 📊 Leetcode Stats</h2>
+
+<div align="center">
+
+![LeetCode Stats](https://leetcard.jacoblin.cool/AYTUGANOV?theme=nord&font=Concert%20One&ext=heatmap)
+
+</divb>
